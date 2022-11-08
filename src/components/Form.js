@@ -31,15 +31,18 @@ const Form = () => {
     const handleSubmit = e => {
         e.preventDefault()
 
-        axios.post('/posts', {title, content, status, userId}, {
+        console.log(title, content, status, userId)
+
+        axios.post('https://socialmtn.devmountain.com/posts', {title, content, status, userId}, {
             headers: {
                 authorization: token
             }
         })
             .then(() => {
-                navigate('/profile')
+                navigate('https://socialmtn.devmountain.com/profile')
             })
-            .catch(err => console.log(err))
+            // error is happening in Form.js file?
+            .catch(err => console.log(err,'hi'))
     }
 
     return (

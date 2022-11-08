@@ -36,3 +36,4 @@ sequelize.sync()
     app.listen(SERVER_PORT, () => console.log(`server listening at ${SERVER_PORT}`))
 })
 .catch(e => console.log(e))
+

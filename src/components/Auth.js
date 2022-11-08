@@ -7,6 +7,8 @@ const Auth = () => {
   const [password, setPassword] = useState("");
   const [register, setRegister] = useState(true);
 
+  const authCtx = useContext(AuthContext)
+
   const submitHandler = (e) => {
     e.preventDefault();
 
@@ -36,7 +38,6 @@ const Auth = () => {
 
   };
 
-  const authCtx = useContext(AuthContext)
 
   return (
     <main>
