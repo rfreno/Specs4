@@ -33,13 +33,13 @@ const Form = () => {
 
         console.log(title, content, status, userId)
 
-        axios.post('https://socialmtn.devmountain.com/posts', {title, content, status, userId}, {
+        axios.post('http://localhost:4005/posts', {title, content, status, userId}, {
             headers: {
                 authorization: token
             }
         })
             .then(() => {
-                navigate('https://socialmtn.devmountain.com/profile')
+                navigate('http://localhost:4005/profile')
             })
             // error is happening in Form.js file?
             .catch(err => console.log(err,'hi'))

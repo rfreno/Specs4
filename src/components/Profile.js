@@ -35,7 +35,7 @@ const Profile = () => {
     }, [getUserPosts])
 
     const updatePost = (id, status) => {
-        axios.put(`https://socialmtn.devmountain.com/posts/${id}`, {status: !status}, {
+        axios.put(`http://localhost:4005/posts/${id}`, {status: !status}, {
             headers: {
                 authorization: token
             }
@@ -49,7 +49,7 @@ const Profile = () => {
     }
 
     const deletePost = id => {
-        axios.delete(`https://socialmtn.devmountain.com/posts/${id}`, {
+        axios.delete(`http://localhost:4005/posts/${id}`, {
             headers: {
                 authorization: token
             }

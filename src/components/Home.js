@@ -25,7 +25,7 @@ const Home = () => {
     const [posts, setPosts] = useState([])
 
     useEffect(() => {
-        axios.get('https://socialmtn.devmountain.com/posts')
+        axios.get('http://localhost:4005/posts')
         .then(res => {
             if (userId) {
                 const otherUsersPosts = res.data.filter(post => userId !== post.userId)

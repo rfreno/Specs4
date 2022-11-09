@@ -22,8 +22,8 @@ const Auth = () => {
     axios
       .post(
         register
-          ? `https://socialmtn.devmountain.com/register`
-          : `https://socialmtn.devmountain.com/login`,
+          ? `http://localhost:4005/register`
+          : `http://localhost:4005/login`,
         body
       )
       .then((res) => {

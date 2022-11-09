@@ -11,6 +11,7 @@ const createToken = (username, id) => {
 
 module.exports = {
   login: async (req, res) => {
+    console.log('login called')
     try {
       const { username, password } = req.body
       let existingUser = await User.findOne({where: {username}})
