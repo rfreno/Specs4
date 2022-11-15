@@ -29,17 +29,20 @@ const Form = () => {
     const [status, setStatus] = useState(true)
 
     const handleSubmit = e => {
+        const url = 'http://localhost:3000'
+        // const url = 'https://socialmtn.devmountain.com'
+
         e.preventDefault()
 
         console.log(title, content, status, userId)
 
-        axios.post('http://localhost:4005/posts', {title, content, status, userId}, {
+        axios.post(`${url}/posts`, {title, content, status, userId}, {
             headers: {
                 authorization: token
             }
         })
             .then(() => {
-                navigate('http://localhost:4005/profile')
+                navigate(`${url}/profile`)
             })
             // error is happening in Form.js file?
             .catch(err => console.log(err,'hi'))

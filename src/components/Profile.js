@@ -20,6 +20,9 @@ import axios from 'axios'
 import AuthContext from '../store/authContext'
 
 const Profile = () => {
+    const url = 'http://localhost:3000'
+    // const url = 'https://socialmtn.devmountain.com'
+
     const {userId, token} = useContext(AuthContext)
 
     const [posts, setPosts] = useState([])
@@ -35,7 +38,7 @@ const Profile = () => {
     }, [getUserPosts])
 
     const updatePost = (id, status) => {
-        axios.put(`http://localhost:4005/posts/${id}`, {status: !status}, {
+        axios.put(`${url}/posts/${id}`, {status: !status}, {
             headers: {
                 authorization: token
             }
@@ -49,7 +52,7 @@ const Profile = () => {
     }
 
     const deletePost = id => {
-        axios.delete(`http://localhost:4005/posts/${id}`, {
+        axios.delete(`${url}/posts/${id}`, {
             headers: {
                 authorization: token
             }

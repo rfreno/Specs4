@@ -10,6 +10,9 @@ const Auth = () => {
   const authCtx = useContext(AuthContext)
 
   const submitHandler = (e) => {
+    const url = 'http://localhost:4005'
+    // const url = 'https://socialmtn.devmountain.com'
+
     e.preventDefault();
 
     console.log("submitHandler called");
@@ -19,19 +22,14 @@ const Auth = () => {
       password,
     };
 
-    axios
-      .post(
-        register
-          ? `http://localhost:4005/register`
-          : `http://localhost:4005/login`,
-        body
-      )
+    axios.post(register ? `${url}/register` : `${url}/login`, body)
       .then((res) => {
         console.log("log", res.data);
 
         authCtx.login(res.data.token, res.data.exp, res.data.userId)
       })
       .catch((error) => {
+        console.log('error', error)
         setUsername("");
         setPassword("");
       });

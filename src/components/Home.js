@@ -20,12 +20,15 @@ import axios from 'axios'
 import AuthContext from '../store/authContext'
 
 const Home = () => {
+    const url = 'http://localhost:3000'
+    // const url = 'https://socialmtn.devmountain.com'
+
     const {userId} = useContext(AuthContext)
 
     const [posts, setPosts] = useState([])
 
     useEffect(() => {
-        axios.get('http://localhost:4005/posts')
+        axios.get(`${url}/posts`)
         .then(res => {
             if (userId) {
                 const otherUsersPosts = res.data.filter(post => userId !== post.userId)
