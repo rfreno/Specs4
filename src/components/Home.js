@@ -1,27 +1,10 @@
-// const Home = () => {
-//     return (
-//         <main>
-//             <h1>There are no posts yet!</h1>
-//         </main>
-//     )
-// }
-
-// export default Home
-
-
-
-
-// YOU WILL BE INSTRUCTED WHEN YOU SHOULD 
-// UNCOMMENT THIS CODE
-
 import {useState, useEffect, useContext} from 'react'
 import axios from 'axios'
 
 import AuthContext from '../store/authContext'
 
 const Home = () => {
-    const url = 'http://localhost:3000'
-    // const url = 'https://socialmtn.devmountain.com'
+    const url = 'http://localhost:4005'
 
     const {userId} = useContext(AuthContext)
 

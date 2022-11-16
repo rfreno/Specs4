@@ -21,7 +21,7 @@ module.exports = {
 
         if (isAuthenticated) {
           const token = createToken(existingUser.dataValues.username, existingUser.dataValues.id)
-          const exp = Data.now() + 1000*60*60*48
+          const exp = Date.now() + 1000*60*60*48
           res.status(200).send({
             username: existingUser.dataValues.username,
             userId: existingUser.dataValues.id,

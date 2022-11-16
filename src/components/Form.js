@@ -1,19 +1,3 @@
-// const Form = () => {
-
-//     return (
-//         <main>
-//             <h1>Form</h1>
-//         </main>
-//     )
-// }
-
-// export default Form
-
-
-
-// YOU WILL BE INSTRUCTED WHEN YOU SHOULD 
-// UNCOMMENT THIS CODE
-
 import {useState, useContext} from 'react'
 import axios from 'axios'
 import {useNavigate} from 'react-router-dom'
@@ -29,12 +13,9 @@ const Form = () => {
     const [status, setStatus] = useState(true)
 
     const handleSubmit = e => {
-        const url = 'http://localhost:3000'
-        // const url = 'https://socialmtn.devmountain.com'
+        const url = 'http://localhost:4005'
 
         e.preventDefault()
-
-        console.log(title, content, status, userId)
 
         axios.post(`${url}/posts`, {title, content, status, userId}, {
             headers: {
@@ -44,8 +25,7 @@ const Form = () => {
             .then(() => {
                 navigate(`${url}/profile`)
             })
-            // error is happening in Form.js file?
-            .catch(err => console.log(err,'hi'))
+            .catch(err => console.log(err,'hi Form.js'))
     }
 
     return (
